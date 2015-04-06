@@ -1,10 +1,10 @@
 window.onload = function() {
     "use strict";
     
-    var game = new Phaser.Game( 400, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 205, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
-        game.load.image('bkg','assets/veins3.png');
+        game.load.image('bkg','assets/veins4.png');
         game.load.image('ship', 'assets/ship2.png');
     }
     
