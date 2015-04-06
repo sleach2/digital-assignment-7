@@ -67,12 +67,14 @@ window.onload = function() {
         blackenemy.setAll('checkWorldBounds', true);
 
         timer = game.time.create(false);
-        //timer.loop(500, spawn(), this);
-        timer.loop(1000,spawn,this);
+        timer.loop(1500,spawn,this);
         timer.start();
     }
 
     function update(){
+        game.physics.arcade.overlap(bullets, redntl, kill, null, this);
+        game.physics.arcade.overlap(bullets, whitentl, kill, null, this);
+        game.physics.arcade.overlap(bullets, blackenemy, kill, null, this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
@@ -85,6 +87,12 @@ window.onload = function() {
         redntl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         whitentl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         blackenemy.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
+    }
+
+    function kill(b,e){
+        b.kill()
+        e.kill()
+        //score+=10;
     }
 
     function fire(){
