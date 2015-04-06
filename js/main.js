@@ -67,7 +67,7 @@ window.onload = function() {
         blackenemy.setAll('checkWorldBounds', true);
 
         timer = game.time.create(false);
-        timer.loop(1500, spawn(), this);
+        timer.loop(500, spawn(), this);
         timer.start();
     }
 
