@@ -6,23 +6,28 @@ window.onload = function() {
     function preload() {
         game.load.image('bkg','assets/veins4.png');
         game.load.image('ship', 'assets/ship2.png');
-        game.load.image('bkc', 'assets/blackcell.png');
+        game.load.image('bbc', 'assets/blackcell.png');
+        game.load.image('rbc', 'assets/redcell.png');
+        game.load.audio('bks','assets/eerie.mp3');
+        game.load.image('wbc', 'assets/whitecell.png');
     }
     
     var bkg;
     var player;
     var music;
     var cursors;
+    var music;
     
     function create() {
-        //music=game.add.audio('bks');
-        //music.play('',0,0.5,true);
+        music=game.add.audio('bks');
+        music.play('',0,0.5,true);
 
-        //game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         bkg=game.add.sprite(0,0,'bkg');
-        game.add.sprite(0,0,'bkc');
+        game.add.sprite(0,0,'bbc');
+        game.add.sprite(100,0,'rbc');
+        game.add.sprite(200,0,'wbc');
 
         player = game.add.sprite(0, game.world.height-90, 'ship');
         game.physics.arcade.enable(player);  
