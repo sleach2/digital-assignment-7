@@ -26,8 +26,8 @@ window.onload = function() {
 
         bkg=game.add.sprite(0,0,'bkg');
         game.add.sprite(0,0,'bbc');
-        game.add.sprite(100,0,'rbc');
-        game.add.sprite(200,0,'wbc');
+        game.add.sprite(0,100,'rbc');
+        game.add.sprite(0,200,'wbc');
 
         player = game.add.sprite(0, game.world.height-90, 'ship');
         game.physics.arcade.enable(player);  
