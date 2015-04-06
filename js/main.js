@@ -1,7 +1,7 @@
 window.onload = function() {
     "use strict";
     
-    var game = new Phaser.Game( 205, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 205, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         game.load.image('bkg','assets/veins4.png');
@@ -22,7 +22,7 @@ window.onload = function() {
 
         bkg=game.add.sprite(0,0,'bkg');
 
-        player = game.add.sprite(0, game.world.height-130, 'ship');
+        player = game.add.sprite(0, game.world.height-50, 'ship');
         game.physics.arcade.enable(player);  
         player.body.collideWorldBounds = true;
 
