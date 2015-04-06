@@ -24,6 +24,7 @@ window.onload = function() {
     var bullets;
     var firebutton;
     var bulletTime=0;
+    var speed=80;
     
     function create() {
         music=game.add.audio('bks');
@@ -32,9 +33,6 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         bkg=game.add.sprite(0,0,'bkg');
-        /*game.add.sprite(0,0,'bbc');
-        game.add.sprite(0,100,'rbc');
-        game.add.sprite(0,200,'wbc');*/
 
         player = game.add.sprite(0, game.world.height-90, 'ship');
         game.physics.arcade.enable(player);  
@@ -80,7 +78,18 @@ window.onload = function() {
         if (firebutton.isDown){
             fire();
         }
-        redntl.forEachAlive(function(enemy){enemy.body.velocity.y=80;},this);
+        redntl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
+        whitentl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
+        blackenemy.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
+
+        var sp = game.rnd.integerInRange(0,100);
+        if(sp>=0 && sp<=33){
+            spawn1();
+        }if(sp>=34 && sp<=66){
+            spawn2();
+        }if(sp>=67 && sp<=100){
+            spawn3();
+        }
     }
 
     function fire(){
@@ -97,4 +106,13 @@ window.onload = function() {
     function spawn1(){
         redntl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'rbc');
     }  
+
+    function spawn2(){
+        whitentl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'wbc');
+    }
+
+    function spawn3(){
+        blackenemy.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'bbc');
+    }
+
 };
