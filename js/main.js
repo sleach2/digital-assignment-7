@@ -109,15 +109,15 @@ window.onload = function() {
     }
 
     function spawn1(){
-        redntl.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'rbc');
+        redntl.create(game.rnd.integerInRange(50,150),game.rnd.integerInRange(0,50),'rbc');
     }  
 
     function spawn2(){
-        whitentl.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'wbc');
+        whitentl.create(game.rnd.integerInRange(50,150),game.rnd.integerInRange(0,50),'wbc');
     }
 
     function spawn3(){
-        blackenemy.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'bbc');
+        blackenemy.create(game.rnd.integerInRange(50,150),game.rnd.integerInRange(0,50),'bbc');
     }
 
 };
