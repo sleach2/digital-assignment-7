@@ -70,7 +70,7 @@ window.onload = function() {
         spawn();
 
         timer = game.time.create(false);
-        timer.loop(1500,spawn,this);
+        timer.loop(1000,spawn,this);
         timer.loop(5000,increment,this);
         timer.start();
     }
