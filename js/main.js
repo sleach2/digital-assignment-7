@@ -66,31 +66,35 @@ window.onload = function() {
         blackenemy.enableBody=true;
         blackenemy.setAll('outOfBoundsKill', true);
         blackenemy.setAll('checkWorldBounds', true);
+
+        spawn1();
     }
 
     function update(){
         player.body.velocity.x=0;
-
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
         }else if (cursors.right.isDown){
             player.body.velocity.x = 250;
         }
-        if (firebutton.isDown)
-        {
+        if (firebutton.isDown){
             fire();
         }
         //enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},150,this);},this);
     }
 
     function fire(){
-    if (game.time.now > bulletTime){
-        var bullet = bullets.getFirstExists(false);
-        if (bullet){
-            bullet.reset(player.x+25, player.y + 8);
-            bullet.body.velocity.y = -400;
-            bulletTime = game.time.now + 200;
+        if (game.time.now > bulletTime){
+            var bullet = bullets.getFirstExists(false);
+            if (bullet){
+                bullet.reset(player.x+25, player.y + 8);
+                bullet.body.velocity.y = -400;
+                bulletTime = game.time.now + 200;
+            }
         }
     }
-}   
+
+    function spawn1(){
+        redntl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,200),'rbc');
+    }  
 };
