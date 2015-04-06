@@ -11,6 +11,7 @@ window.onload = function() {
     var bkg;
     var player;
     var music;
+    var cursors;
     
     function create() {
         //music=game.add.audio('bks');
@@ -24,6 +25,8 @@ window.onload = function() {
         player = game.add.sprite(0, game.world.height-130, 'player');
         game.physics.arcade.enable(player);  
         player.body.collideWorldBounds = true;
+
+        cursors = game.input.keyboard.createCursorKeys();
     }
     
     function update() {
