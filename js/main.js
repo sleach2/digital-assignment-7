@@ -5,7 +5,7 @@ window.onload = function() {
     
     function preload() {
         game.load.image('bkg','assets/veins3.png');
-        game.load.image('ship', 'assets/ship.png');
+        game.load.image('ship', 'assets/ship2.png');
     }
     
     var bkg;
