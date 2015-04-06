@@ -32,9 +32,9 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         bkg=game.add.sprite(0,0,'bkg');
-        game.add.sprite(0,0,'bbc');
+        /*game.add.sprite(0,0,'bbc');
         game.add.sprite(0,100,'rbc');
-        game.add.sprite(0,200,'wbc');
+        game.add.sprite(0,200,'wbc');*/
 
         player = game.add.sprite(0, game.world.height-90, 'ship');
         game.physics.arcade.enable(player);  
@@ -68,22 +68,7 @@ window.onload = function() {
         blackenemy.setAll('checkWorldBounds', true);
     }
 
-
-
-
-    /*for(var i=0; i<20; i++){
-            var man = enemies.create(game.rnd.integerInRange(500,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'man');
-            man.body.gravity.y=350;
-            man.animations.add('l',[0,1,2],10,true);
-            man.animations.add('r',[4,5,6],10,true);
-            man.frame=3;
-            man.body.collideWorldBounds=true;
-        }*/
-
-
-
-    
-    function update() {
+    function update(){
         player.body.velocity.x=0;
 
         if (cursors.left.isDown){
@@ -98,7 +83,7 @@ window.onload = function() {
         //enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},150,this);},this);
     }
 
-    function fire () {
+    function fire(){
     if (game.time.now > bulletTime){
         var bullet = bullets.getFirstExists(false);
         if (bullet){
