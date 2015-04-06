@@ -1,7 +1,7 @@
 window.onload = function() {
     "use strict";
     
-    var game = new Phaser.Game( 210, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 205, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         game.load.image('bkg','assets/veins4.png');
