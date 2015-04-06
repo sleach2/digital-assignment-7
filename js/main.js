@@ -10,7 +10,7 @@ window.onload = function() {
         game.load.image('rbc', 'assets/redcell.png');
         game.load.audio('bks','assets/eerie.mp3');
         game.load.image('wbc', 'assets/whitecell.png');
-        game.load.image('bullet','assets/bullet.png');
+        game.load.image('bullet','assets/bullet2.png');
     }
     
     var bkg;
