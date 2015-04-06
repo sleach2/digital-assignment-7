@@ -25,6 +25,7 @@ window.onload = function() {
     var firebutton;
     var bulletTime=0;
     var speed=80;
+    var timer;
     
     function create() {
         music=game.add.audio('bks');
@@ -65,7 +66,9 @@ window.onload = function() {
         blackenemy.setAll('outOfBoundsKill', true);
         blackenemy.setAll('checkWorldBounds', true);
 
-        spawn1();
+        timer = game.time.create(false);
+        timer.loop(500,spawn(),this);
+        timer.start();
     }
 
     function update(){
@@ -81,15 +84,6 @@ window.onload = function() {
         redntl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         whitentl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         blackenemy.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
-
-        var sp = game.rnd.integerInRange(0,100);
-        if(sp>=0 && sp<=33){
-            spawn1();
-        }if(sp>=34 && sp<=66){
-            spawn2();
-        }if(sp>=67 && sp<=100){
-            spawn3();
-        }
     }
 
     function fire(){
@@ -100,6 +94,17 @@ window.onload = function() {
                 bullet.body.velocity.y = -400;
                 bulletTime = game.time.now + 200;
             }
+        }
+    }
+
+    function spawn(){
+        var sp = game.rnd.integerInRange(0,100);
+        if(sp>=0 && sp<=33){
+            spawn1();
+        }if(sp>=34 && sp<=66){
+            spawn2();
+        }if(sp>=67 && sp<=100){
+            spawn3();
         }
     }
 
