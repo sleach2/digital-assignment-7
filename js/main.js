@@ -1,7 +1,7 @@
 window.onload = function() {
     "use strict";
     
-    var game = new Phaser.Game( 205, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 210, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         game.load.image('bkg','assets/veins4.png');
@@ -67,7 +67,7 @@ window.onload = function() {
         blackenemy.setAll('checkWorldBounds', true);
 
         timer = game.time.create(false);
-        timer.loop(500,spawn(),this);
+        timer.loop(2000,spawn(),this);
         timer.start();
     }
 
@@ -109,15 +109,15 @@ window.onload = function() {
     }
 
     function spawn1(){
-        redntl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'rbc');
+        redntl.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'rbc');
     }  
 
     function spawn2(){
-        whitentl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'wbc');
+        whitentl.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'wbc');
     }
 
     function spawn3(){
-        blackenemy.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'bbc');
+        blackenemy.create(game.rnd.integerInRange(0,200),game.rnd.integerInRange(0,50),'bbc');
     }
 
 };
