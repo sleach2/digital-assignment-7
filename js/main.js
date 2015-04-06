@@ -75,8 +75,8 @@ window.onload = function() {
     }
 
     function update(){
-        game.physics.arcade.overlap(bullets, redntl, kill, null, this);
-        game.physics.arcade.overlap(bullets, whitentl, kill, null, this);
+        game.physics.arcade.overlap(bullets, redntl, kill1, null, this);
+        game.physics.arcade.overlap(bullets, whitentl, kill1, null, this);
         game.physics.arcade.overlap(bullets, blackenemy, kill, null, this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
@@ -92,7 +92,7 @@ window.onload = function() {
         blackenemy.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
     }
 
-    function kill(b,e){
+    function kill1(b,e){
         b.kill()
         e.kill()
         timer.stop();
@@ -101,7 +101,12 @@ window.onload = function() {
         blackenemy.forEachAlive(function(enemy){enemy.kill();},this);
         game.input.disabled=true;
         game.add.text(50,350, 'Game\nOver\nScore: '+score, { fontSize: '64px', fill: '#FFFFFF' });
-        //score+=10;
+    }
+
+    function kill(b,e){
+        b.kill()
+        e.kill()
+        score+=10;
     }
 
     function fire(){
