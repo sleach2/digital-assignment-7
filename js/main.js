@@ -100,7 +100,7 @@ window.onload = function() {
 
     function fire () {
     if (game.time.now > bulletTime){
-        bullet = bullets.getFirstExists(false);
+        var bullet = bullets.getFirstExists(false);
         if (bullet){
             bullet.reset(player.x, player.y + 8);
             bullet.body.velocity.y = -400;
