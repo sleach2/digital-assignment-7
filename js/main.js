@@ -71,7 +71,7 @@ window.onload = function() {
 
         timer = game.time.create(false);
         timer.loop(1500,spawn,this);
-        timer.loop(5000,speed+=10,this);
+        timer.loop(5000,increment,this);
         timer.start();
     }
 
@@ -94,6 +94,10 @@ window.onload = function() {
         redntl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         whitentl.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
         blackenemy.forEachAlive(function(enemy){enemy.body.velocity.y=speed;},this);
+    }
+
+    function increment(){
+        speed+=10;
     }
 
     function kill1(b,e){
