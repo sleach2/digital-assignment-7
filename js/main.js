@@ -78,6 +78,9 @@ window.onload = function() {
         game.physics.arcade.overlap(bullets, redntl, kill1, null, this);
         game.physics.arcade.overlap(bullets, whitentl, kill1, null, this);
         game.physics.arcade.overlap(bullets, blackenemy, kill, null, this);
+        game.physics.arcade.overlap(player, redntl, kill1, null, this);
+        game.physics.arcade.overlap(player, whitentl, kill1, null, this);
+        game.physics.arcade.overlap(player, blackenemy, kill1, null, this);
         player.body.velocity.x=0;
         if (cursors.left.isDown){
             player.body.velocity.x = -250;
