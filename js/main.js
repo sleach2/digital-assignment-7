@@ -80,7 +80,7 @@ window.onload = function() {
         if (firebutton.isDown){
             fire();
         }
-        //enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},150,this);},this);
+        redntl.forEachAlive(function(enemy){enemy.body.velocity.y=80;},this);
     }
 
     function fire(){
@@ -95,6 +95,6 @@ window.onload = function() {
     }
 
     function spawn1(){
-        redntl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,200),'rbc');
+        redntl.create(game.rnd.integerInRange(0,205),game.rnd.integerInRange(0,50),'rbc');
     }  
 };
