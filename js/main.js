@@ -99,7 +99,7 @@ window.onload = function() {
         whitentl.forEachAlive(function(enemy){enemy.kill();},this);
         blackenemy.forEachAlive(function(enemy){enemy.kill();},this);
         game.input.disabled=true;
-        game.add.text(100,350, 'Game\nOver', { fontSize: '64px', fill: '#FFFFFF' });
+        game.add.text(50,350, 'Game\nOver', { fontSize: '64px', fill: '#FFFFFF' });
         //score+=10;
     }
 
