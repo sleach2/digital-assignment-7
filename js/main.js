@@ -22,6 +22,8 @@ window.onload = function() {
     var whitentl;
     var blackenemy;
     var bullets;
+    var firebutton;
+    var bulletTime=0;
     
     function create() {
         music=game.add.audio('bks');
@@ -39,6 +41,7 @@ window.onload = function() {
         player.body.collideWorldBounds = true;
 
         cursors = game.input.keyboard.createCursorKeys();
+        firebutton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
         bullets = game.add.group();
         bullets.enableBody = true;
@@ -81,7 +84,6 @@ window.onload = function() {
 
     
     function update() {
-        //game.physics.arcade.collide(player, platforms);
         player.body.velocity.x=0;
 
         if (cursors.left.isDown){
@@ -89,17 +91,21 @@ window.onload = function() {
         }else if (cursors.right.isDown){
             player.body.velocity.x = 250;
         }
-        if (game.input.activePointer.isDown){
+        if (firebutton.isDown)
+        {
             fire();
         }
+        //enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},150,this);},this);
     }
 
     function fire () {
-        if (game.time.now > nextFire && bullets.countDead() > 0){
-            nextFire = game.time.now + fireRate;
-            var bullet = bullets.getFirstExists(false);
-            bullet.reset(player.x, player.y);
-            bullet.body.velocity.y=-100
+    if (game.time.now > bulletTime){
+        bullet = bullets.getFirstExists(false);
+        if (bullet){
+            bullet.reset(player.x, player.y + 8);
+            bullet.body.velocity.y = -400;
+            bulletTime = game.time.now + 200;
         }
     }
+}   
 };
