@@ -101,9 +101,9 @@ window.onload = function() {
         var sp = game.rnd.integerInRange(0,100);
         if(sp>=0 && sp<=33){
             spawn1();
-        }if(sp>=34 && sp<=66){
+        }else if(sp>=34 && sp<=66){
             spawn2();
-        }if(sp>=67 && sp<=100){
+        }else if(sp>=67 && sp<=100){
             spawn3();
         }
     }
