@@ -22,7 +22,7 @@ window.onload = function() {
 
         bkg=game.add.sprite(0,0,'bkg');
 
-        player = game.add.sprite(0, game.world.height-130, 'player');
+        player = game.add.sprite(0, game.world.height-130, 'ship');
         game.physics.arcade.enable(player);  
         player.body.collideWorldBounds = true;
 
