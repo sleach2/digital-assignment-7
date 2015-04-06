@@ -4,7 +4,7 @@ window.onload = function() {
     var game = new Phaser.Game( 400, 1000, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
-        game.load.image('bkg','assets/veins.png');
+        game.load.image('bkg','assets/veins2.png');
     }
     
     var bkg;
