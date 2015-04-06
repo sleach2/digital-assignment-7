@@ -26,6 +26,7 @@ window.onload = function() {
     var bulletTime=0;
     var speed=80;
     var timer;
+    var score=0;
     
     function create() {
         music=game.add.audio('bks');
@@ -99,7 +100,7 @@ window.onload = function() {
         whitentl.forEachAlive(function(enemy){enemy.kill();},this);
         blackenemy.forEachAlive(function(enemy){enemy.kill();},this);
         game.input.disabled=true;
-        game.add.text(50,350, 'Game\nOver', { fontSize: '64px', fill: '#FFFFFF' });
+        game.add.text(75,350, 'Game\nOver\n' score, { fontSize: '64px', fill: '#FFFFFF' });
         //score+=10;
     }
 
