@@ -6,6 +6,7 @@ window.onload = function() {
     function preload() {
         game.load.image('bkg','assets/veins4.png');
         game.load.image('ship', 'assets/ship2.png');
+        game.load.image('bkc', 'assets/blackcell.png');
     }
     
     var bkg;
@@ -21,8 +22,9 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         bkg=game.add.sprite(0,0,'bkg');
+        game.add.sprite(0,0,'bkc');
 
-        player = game.add.sprite(0, game.world.height-50, 'ship');
+        player = game.add.sprite(0, game.world.height-90, 'ship');
         game.physics.arcade.enable(player);  
         player.body.collideWorldBounds = true;
 
