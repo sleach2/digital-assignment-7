@@ -66,6 +66,8 @@ window.onload = function() {
         blackenemy.setAll('outOfBoundsKill', true);
         blackenemy.setAll('checkWorldBounds', true);
 
+        spawn();
+
         timer = game.time.create(false);
         timer.loop(1500,spawn,this);
         timer.start();
@@ -92,6 +94,7 @@ window.onload = function() {
     function kill(b,e){
         b.kill()
         e.kill()
+        timer.stop();
         //score+=10;
     }
 
